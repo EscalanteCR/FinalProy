@@ -1,0 +1,35 @@
+﻿@model FinalProy.Models.noticias
+
+@{
+    ViewBag.Title = "Consulta";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Consulta de noticias</h2>
+
+<div>
+    <h4>Noticias</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreNoticia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreNoticia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CuerpoNoticia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CuerpoNoticia)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.IdNoticia }) |
+    @Html.ActionLink("Volver a la lista", "Index")
+</p>

@@ -1,0 +1,35 @@
+﻿@model FinalProy.Models.PagoPendiente
+
+@{
+    ViewBag.Title = "Detalles de pagos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Pagos Pendientes</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.totalPago)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.totalPago)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CedulaEnMora)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CedulaEnMora)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.IdPagoPendiente }) |
+    @Html.ActionLink("Volver a la lista", "Index")
+</p>

@@ -1,0 +1,40 @@
+﻿@model IEnumerable<FinalProy.Models.evento>
+
+@{
+    ViewBag.Title = "Consulta de eventos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Crear un nuevo evento", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Evento_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.last_place)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Evento_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.last_place)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.Evento_id }) |
+            @Html.ActionLink("Consultar", "Details", new { id=item.Evento_id }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.Evento_id })
+        </td>
+    </tr>
+}
+
+</table>

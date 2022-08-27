@@ -1,0 +1,41 @@
+﻿@model FinalProy.Models.PagoPendiente
+
+@{
+    ViewBag.Title = "Borrar pagos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Pagos pendientes</h2>
+
+<h3>¿Estás seguro que deseas eliminar este pago?</h3>
+<div>
+    <h4>Pagos Pendiente</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.totalPago)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.totalPago)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CedulaEnMora)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CedulaEnMora)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Borrar" class="btn btn-default" /> |
+            @Html.ActionLink("Volver a la lista", "Index")
+        </div>
+    }
+</div>

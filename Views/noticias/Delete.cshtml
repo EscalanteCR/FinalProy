@@ -1,0 +1,41 @@
+﻿@model FinalProy.Models.noticias
+
+@{
+    ViewBag.Title = "Borrar noticia";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Borrar noticia</h2>
+
+<h3>¿Estás seguro que quieres borrar la noticia?</h3>
+<div>
+    <h4>Noticias semanales</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreNoticia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreNoticia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CuerpoNoticia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CuerpoNoticia)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Borrar" class="btn btn-default" /> |
+            @Html.ActionLink("Volver a las noticias", "Index")
+        </div>
+    }
+</div>

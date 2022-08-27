@@ -1,0 +1,40 @@
+﻿@model IEnumerable<FinalProy.Models.PagoPendiente>
+
+@{
+    ViewBag.Title = "Consulta de pagos pendientes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Crear uno nuevo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.totalPago)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CedulaEnMora)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.totalPago)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CedulaEnMora)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.IdPagoPendiente }) |
+            @Html.ActionLink("Consulta", "Details", new { id=item.IdPagoPendiente }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.IdPagoPendiente })
+        </td>
+    </tr>
+}
+
+</table>
