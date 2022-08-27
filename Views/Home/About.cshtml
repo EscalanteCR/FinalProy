@@ -1,4 +1,17 @@
-﻿@{
+﻿
+@{
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+            <li>@Html.ActionLink("Sobre nosotros", "About", "Home")</li>
+            <li>@Html.ActionLink("Contáctanos", "Contact", "Home")</li>
+            <li>@Html.ActionLink("Ingresar Noticia", "Create", "Noticias")</li>
+            <li>@Html.ActionLink("Ingresar pagos Pendientes", "Create", "PagoPendientes")</li>
+            <li>@Html.ActionLink("Ingresar eventos", "Create", "eventoes")</li>
+
+        </ul>
+        @Html.Partial("_LoginPartial")
+    </div>
     ViewBag.Title = "Sobre nosotros";
 }
 <h2>@ViewBag.Title.</h2>

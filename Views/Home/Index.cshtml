@@ -1,12 +1,24 @@
 ﻿@{
     ViewBag.Title = "Home Page";
+
 }
+<div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+        <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+        <li>@Html.ActionLink("Sobre nosotros", "About", "Home")</li>
+        <li>@Html.ActionLink("Contáctanos", "Contact", "Home")</li>
+        <li>@Html.ActionLink("Ingresar Noticia", "Create", "Noticias")</li>
+        <li>@Html.ActionLink("Ingresar pagos Pendientes", "Create", "PagoPendientes")</li>
+        <li>@Html.ActionLink("Ingresar eventos", "Create", "eventoes")</li>
+
+    </ul>
+</div>
 
 <div class="jumbotron">
     <img src="/logo.png">
     <h1>Municipalidad de Heredia</h1>
     <p class="lead">Política cultural del cantón de Heredia.</p>
     <img width="1000"
-     height="500" src="/feria_trabajemos_2022-02-slider.png">
+         height="500" src="/feria_trabajemos_2022-02-slider.png">
 </div>
 

@@ -3,6 +3,17 @@
 @{
     ViewBag.Title = "Consulta de pagos pendientes";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+            <li>@Html.ActionLink("Sobre nosotros", "About", "Home")</li>
+            <li>@Html.ActionLink("Contáctanos", "Contact", "Home")</li>
+            <li>@Html.ActionLink("Ingresar Noticia", "Create", "Noticias")</li>
+            <li>@Html.ActionLink("Ingresar pagos Pendientes", "Create", "PagoPendientes")</li>
+            <li>@Html.ActionLink("Ingresar eventos", "Create", "eventoes")</li>
+
+        </ul>
+    </div>
 }
 
 <h2>Index</h2>
@@ -21,20 +32,21 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.totalPago)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CedulaEnMora)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.IdPagoPendiente }) |
-            @Html.ActionLink("Consulta", "Details", new { id=item.IdPagoPendiente }) |
-            @Html.ActionLink("Eliminar", "Delete", new { id=item.IdPagoPendiente })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.totalPago)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CedulaEnMora)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.IdPagoPendiente }) |
+                @Html.ActionLink("Consulta", "Details", new { id = item.IdPagoPendiente }) |
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.IdPagoPendiente })
+            </td>
+        </tr>
+    }
 
 </table>
